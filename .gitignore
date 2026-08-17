@@ -1,0 +1,43 @@
+# Build çıktıları
+target/
+build/
+out/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Log dosyaları
+*.log
+
+# Geçici dosyalar
+*.tmp
+*.swp
+
+# Java class dosyaları
+*.class
+
+# Paketler
+*.jar
+*.war
+*.ear
+
+# OS dosyaları
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+
+# Maven Wrapper jar hariç
+.mvn/wrapper/maven-wrapper.jar
+``
