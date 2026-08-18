@@ -21,27 +21,6 @@ import org.flywaydb.core.api.output.ValidateResult;
  * şema olmayabilir. Geliştirirken ise çoğu zaman yanlış alarmdır: göç dosyası
  * üzerinde çalışılırken uygulama bir kez açılır, taslak metin veritabanına
  * işlenir, dosya sonra son hâlini alır. Şema aynıdır, sağlama tutmaz.
- *
- * <p><b>Onarım ne YAPMAZ:</b> göçleri yeniden çalıştırmaz, tablolara ve veriye
- * dokunmaz. Yalnızca geçmişteki sağlamayı dosyadakiyle değiştirir. Bu yüzden
- * uygulama bunu kendiliğinden yapmaz, elle çalıştırılır: "bu iki metin aynı
- * şemayı kuruyor" tespiti koda değil insana aittir. Kod bunu kendi başına
- * varsayarsa gerçek bir şema kaymasını da sessizce onaylar.
- *
- * <p><b>Önce raporu oku.</b> Araç, onarımdan önce her göç için Flyway'in
- * DİSKTE hangi dosyayı okuduğunu yazdırır. Uyuşmazlığın sık görülen ve
- * onarımla ÇÖZÜLMEYEN bir sebebi budur: uygulama, kaynak ağacındaki dosyayı
- * değil derlenmiş KOPYASINI okur ({@code target/classes} — Eclipse'te projenin
- * çıktı klasörü). Orada eski bir kopya kalmışsa onarım o eski metnin
- * sağlamasını yazar; temiz bir derlemeden sonra aynı hata geri gelir. Rapordaki
- * yol beklediğin dosya değilse önce projeyi temizleyip yeniden derle
- * ({@code mvn clean}, Eclipse'te Project ▸ Clean), sonra bu aracı çalıştır.
- *
- * <h2>Çalıştırma</h2>
- * Eclipse'te: bu sınıfa sağ tık ▸ Run As ▸ Java Application. Terminalde:
- * <pre>{@code mvn -q -pl core exec:java -Dexec.mainClass=com.hitit.aviation.core.data.SchemaRepairTool}</pre>
- * Veritabanı yolu {@link DatabaseLocation}'dan gelir — başka bir dosyayı
- * onarmak için {@code -Drouteoptimizer.db.path=...}.
  */
 public final class SchemaRepairTool {
 

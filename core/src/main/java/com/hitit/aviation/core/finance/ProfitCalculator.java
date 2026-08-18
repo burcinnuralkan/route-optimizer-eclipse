@@ -7,7 +7,7 @@ import com.hitit.aviation.core.model.OptimizerParams;
 
 public class ProfitCalculator {
 
-    private final EmissionCalculator emission;
+    public final EmissionCalculator emission;
 
     public ProfitCalculator(EmissionCalculator emission) {
         this.emission = emission;
