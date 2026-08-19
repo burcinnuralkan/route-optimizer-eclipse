@@ -37,7 +37,8 @@ public record FlightDto(
         double navCostUsd,
         double airportCostUsd,
         double fuelKg,
-        double distanceKm) {
+        double distanceKm,
+        double mtow) {
 
     public static FlightDto of(Flight f) {
         return new FlightDto(
@@ -49,7 +50,7 @@ public record FlightDto(
                 f.paxRevenueUsd(), f.ancillaryRevenueUsd(), f.cargoRevenueUsd(),
                 f.crewCostUsd(), f.ownershipCostUsd(), f.maintenanceCostUsd(),
                 f.overheadCostUsd(), f.navCostUsd(), f.airportCostUsd(),
-                f.fuelKg(), f.distanceKm());
+                f.fuelKg(), f.distanceKm(), f.mtow());
     }
 }
  

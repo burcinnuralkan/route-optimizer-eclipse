@@ -44,7 +44,7 @@ public final class TestFlights {
                 cargoKg, 20_000,
                 20_000, 0, 0,
                 1_000, 0, 0, 0, 0, 0,
-                fuelKg, 1_000);
+                fuelKg, 1_000, fuelKg);
     }
 
     /**
@@ -61,7 +61,7 @@ public final class TestFlights {
                 0, 20_000,
                 20_000, 0, 0,
                 1_000, 0, 0, 0, 0, 0,
-                3_000, 1_000);
+                3_000, 1_000, 0);
     }
 }
  

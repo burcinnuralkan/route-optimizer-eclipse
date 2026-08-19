@@ -53,6 +53,7 @@ public record FlightEvaluation(
         double departureDelayMinutes, //kalkış gecikmesi
         double arrivalDelayMinutes, //varış gecikmesi
         boolean onTimeArrival //zamanında varış: varış gecikmesi<=15
+  
 ) {
 	public FlightEvaluation {
 		double revSum = paxRevenueUsd +ancillaryRevenueUsd + cargoRevenueUsd;

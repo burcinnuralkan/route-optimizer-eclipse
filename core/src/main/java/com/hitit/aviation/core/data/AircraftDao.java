@@ -36,6 +36,11 @@ public class AircraftDao {
             return aircraftType.equals(other.aircraftType)
                     && seating.sameAs(other.seating);
         }
+
+		public double mtow() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
     }
 
     static final LocalDate EPOCH = LocalDate.of(1970, 1, 1);
@@ -47,7 +52,8 @@ public class AircraftDao {
             aircraft_type,
             econ_seats,
             bus_seats,
-            cargo_capacity_kg
+            cargo_capacity_kg,
+            mtow
             """;
 
     private final Database db;
@@ -165,6 +171,7 @@ public class AircraftDao {
             ps.setInt(4, state.seating().econSeats());
             ps.setInt(5, state.seating().busSeats());
             ps.setDouble(6, state.seating().cargoCapacityKg());
+            ps.setDouble(7,state.mtow());
 
             ps.executeUpdate();
         }

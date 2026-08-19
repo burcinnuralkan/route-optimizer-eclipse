@@ -38,7 +38,8 @@ public record Flight(
         double navCostUsd,
         double airportCostUsd,
         double fuelKg,
-        double distanceKm  
+        double distanceKm,
+        double mtow
 ) {
 	private static final DateTimeFormatter T = DateTimeFormatter.ofPattern("HH:mm");
 	private static final DateTimeFormatter DT = DateTimeFormatter.ofPattern("dd.MM HH.mm");
@@ -146,6 +147,7 @@ public record Flight(
     	            .airportCostUsd(600)
     	            .fuelKg(0)                       // parametrik tahmin edilecek
     	            .distanceKm(from.distanceTo(to))
+    	            .mtow(0)
     	            .build();
     	}
 
@@ -190,6 +192,7 @@ public record Flight(
     	    private double airportCostUsd;
     	    private double fuelKg;
     	    private double distanceKm;
+    	    private double mtow;
 
     	    private Builder() { }
 
@@ -220,6 +223,7 @@ public record Flight(
     	    public Builder airportCostUsd(double v)      { this.airportCostUsd = v; return this; }
     	    public Builder fuelKg(double v)              { this.fuelKg = v; return this; }
     	    public Builder distanceKm(double v)          { this.distanceKm = v; return this; }
+    	    public Builder mtow(double v)				 { this.mtow = v; return this;}
 
     	    public Flight build() {
     	        return new Flight(
@@ -231,7 +235,7 @@ public record Flight(
     	                paxRevenueUsd, ancillaryRevenueUsd, cargoRevenueUsd,
     	                crewCostUsd, ownershipCostUsd, maintenanceCostUsd,
     	                overheadCostUsd, navCostUsd, airportCostUsd,
-    	                fuelKg, distanceKm);
+    	                fuelKg, distanceKm, mtow);
     	    }
     	}
     	 
